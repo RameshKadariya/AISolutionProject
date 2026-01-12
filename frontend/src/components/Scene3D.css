@@ -1,0 +1,14 @@
+.scene-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Make sure canvas takes up full container */
+.scene-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

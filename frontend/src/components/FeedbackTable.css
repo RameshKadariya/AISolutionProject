@@ -1,0 +1,177 @@
+/* Feedback Table Styles */
+.feedback-table-container {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.feedback-table thead {
+  background: var(--accent-color);
+  color: black;
+}
+
+.feedback-table th {
+  padding: 1rem 0.8rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feedback-table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.feedback-table tbody tr:hover {
+  background: rgba(255, 153, 0, 0.05);
+}
+
+.feedback-table td {
+  padding: 1rem 0.8rem;
+  vertical-align: top;
+}
+
+.feedback-id {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.feedback-date {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.customer-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.customer-email {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+}
+
+.customer-company {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.service-badge {
+  background: rgba(255, 153, 0, 0.2);
+  color: var(--accent-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.rating-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stars-compact {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.stars-compact .star {
+  font-size: 0.9rem;
+  opacity: 0.3;
+}
+
+.stars-compact .star.filled {
+  opacity: 1;
+}
+
+.rating-number {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.no-rating {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.feedback-preview {
+  max-width: 200px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.status-select-compact {
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-select-compact:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+/* Responsive Design for Feedback Table */
+@media (max-width: 1200px) {
+  .feedback-table {
+    font-size: 0.8rem;
+  }
+  
+  .feedback-table th,
+  .feedback-table td {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .feedback-preview {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-table-container {
+    overflow-x: auto;
+  }
+  
+  .feedback-table {
+    min-width: 800px;
+  }
+  
+  .feedback-table th,
+  .feedback-table td {
+    padding: 0.6rem 0.4rem;
+  }
+  
+  .feedback-preview {
+    max-width: 120px;
+  }
+}

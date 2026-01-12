@@ -1,0 +1,120 @@
+/* Theme Toggle Component */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover-bg);
+}
+
+.toggle-track {
+  width: 50px;
+  height: 26px;
+  background: var(--toggle-track-bg);
+  border-radius: 13px;
+  position: relative;
+  border: 2px solid var(--toggle-border);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--toggle-thumb-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--toggle-thumb-border);
+}
+
+.toggle-icon {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--toggle-label-color);
+  min-width: 40px;
+  text-align: left;
+}
+
+/* Theme Variables */
+:root[data-theme="dark"] {
+  --toggle-track-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+  --toggle-thumb-bg: linear-gradient(135deg, #ff9900, #ffb84d);
+  --toggle-border: rgba(255, 153, 0, 0.3);
+  --toggle-thumb-border: rgba(255, 153, 0, 0.5);
+  --toggle-label-color: rgba(255, 255, 255, 0.9);
+  --toggle-hover-bg: rgba(255, 153, 0, 0.1);
+}
+
+:root[data-theme="light"] {
+  --toggle-track-bg: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  --toggle-thumb-bg: linear-gradient(135deg, #ff9900, #ffb84d);
+  --toggle-border: rgba(255, 153, 0, 0.3);
+  --toggle-thumb-border: rgba(255, 153, 0, 0.5);
+  --toggle-label-color: rgba(0, 0, 0, 0.8);
+  --toggle-hover-bg: rgba(255, 153, 0, 0.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.theme-toggle:hover .toggle-track {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .theme-toggle {
+    gap: 0.5rem;
+  }
+  
+  .toggle-label {
+    font-size: 0.8rem;
+    min-width: 35px;
+  }
+  
+  .toggle-track {
+    width: 45px;
+    height: 24px;
+  }
+  
+  .toggle-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .toggle-icon {
+    font-size: 10px;
+  }
+}
